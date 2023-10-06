@@ -1,0 +1,30 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  width: 15rem;
+  height: 27rem;
+  background-color: green;
+}
+
+.close-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: white;
+  padding-right: 3rem;
+}
+
+.cart-items-container {
+  color: white;
+}
+
+.cart-items-container p {
+  padding-left: 1rem;
+}
+
+.cart-items-container ul {
+  padding-left: 1rem;
+}
