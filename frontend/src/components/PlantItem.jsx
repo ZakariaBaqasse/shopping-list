@@ -7,7 +7,7 @@ const PlantItem = ({ plant, addToCart }) => {
   return (
     <div className={`${classes["item-container"]}`}>
       <div className={`${classes["cover-container"]}`}>
-        <img src={plant.cover} />
+        <img src={`/assets/${plant.cover}.jpg`} />
         <div className={`${classes.price}`}>{plant.price} $</div>
       </div>
       <p>{plant.name}</p>
