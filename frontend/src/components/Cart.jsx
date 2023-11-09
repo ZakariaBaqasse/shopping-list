@@ -1,11 +1,22 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 import classes from "./cart.module.css";
+import { ROUTES } from "../utils/routes";
 
 const Cart = ({ cartItems, emptyCart }) => {
   let totalPrice = 0;
   cartItems.forEach((item) => {
     totalPrice += item.price * item.quantity;
   });
+  const navigate = useNavigate();
+  const initiateOrder = () => {
+    const isUserAuthenticated = window.localStorage.getItem("userData");
+    if (!isUserAuthenticated) {
+      navigate(ROUTES.Login);
+    } else {
+      navigate(ROUTES.NewOrder);
+    }
+  };
   return (
     <div className={`${classes["cart-container"]}`}>
       <div className={`${classes["close-btn"]}`}>
@@ -28,7 +39,10 @@ const Cart = ({ cartItems, emptyCart }) => {
         )}
         <h4>Total: {totalPrice}$</h4>
         <div className={`${classes["action-btns-container"]}`}>
-          <button className={`${classes["confirm-btn"]}`}>
+          <button
+            onClick={initiateOrder}
+            className={`${classes["confirm-btn"]}`}
+          >
             Valider la commande
           </button>
           <button

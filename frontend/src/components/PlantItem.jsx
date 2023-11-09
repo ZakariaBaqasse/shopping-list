@@ -13,7 +13,7 @@ const PlantItem = ({ plant, addToCart }) => {
       <p>{plant.name}</p>
       <CareScale careType="water" scale={plant.water} />
       <CareScale careType="light" scale={plant.light} />
-      <button onClick={() => addToCart(plant.name, plant.price)}>
+      <button onClick={() => addToCart(plant.name, plant.price, plant._id)}>
         Ajouter
       </button>
     </div>

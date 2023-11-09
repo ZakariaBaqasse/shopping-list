@@ -11,11 +11,10 @@ export const findUserByEmail = async (email) => {
 
 export const addUser = async (username, email, password) => {
   try {
-    const findUser = await findUserByEmail(email);
-    if (findUser) {
-      throw new Error("Email already taken");
-    }
     const user = new User({ username, email, password });
     return await user.save();
-  } catch (error) {}
+  } catch (error) {
+    console.log("Error in User DAO: addUser: ", error);
+    throw new Error(error);
+  }
 };

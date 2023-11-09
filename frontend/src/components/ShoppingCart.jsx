@@ -17,9 +17,9 @@ const ShoppingCart = ({ category }) => {
     setCartItems([]);
     window.localStorage.setItem("cart", JSON.stringify([]));
   };
-  const addToCart = (name, price) => {
+  const addToCart = (name, price, id) => {
     let currentAddedPlants = JSON.parse(window.localStorage.getItem("cart"));
-    const plantToAdd = { name, price };
+    const plantToAdd = { name, price, id };
     if (currentAddedPlants) {
       const plantExists = currentAddedPlants.find(
         (plant) => plant.name === name
