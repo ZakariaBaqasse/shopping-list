@@ -27,7 +27,17 @@ const Cart = ({ cartItems, emptyCart }) => {
           <p>Votre panier est vide</p>
         )}
         <h4>Total: {totalPrice}$</h4>
-        <button onClick={emptyCart}>Vider le panier</button>
+        <div className={`${classes["action-btns-container"]}`}>
+          <button className={`${classes["confirm-btn"]}`}>
+            Valider la commande
+          </button>
+          <button
+            className={`${classes["empty-cart-btn"]}`}
+            onClick={emptyCart}
+          >
+            Vider le panier
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -28,3 +28,37 @@
 .cart-items-container ul {
   padding-left: 1rem;
 }
+
+.action-btns-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-cart-btn {
+  background-color: #c80815;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.empty-cart-btn:hover {
+  filter: brightness(85%);
+}
+
+.confirm-btn {
+  background-color: #1560bd;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  filter: brightness(110%);
+}

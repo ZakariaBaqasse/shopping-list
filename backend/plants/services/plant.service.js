@@ -1,6 +1,6 @@
-import { findAllPlants } from "../models/plant.model.js";
+import Plant from "../models/plant.model.js";
 
 export const getAllPlants = async (req, res) => {
-  const plantList = await findAllPlants();
+  const plantList = await Plant.find();
   res.status(200).json(plantList);
 };
